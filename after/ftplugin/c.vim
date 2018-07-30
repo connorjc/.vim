@@ -11,3 +11,5 @@ set softtabstop=3   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 set cindent
+
+let b:ale_linters = ['cpplint', 'gcc']
