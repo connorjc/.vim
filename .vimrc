@@ -33,6 +33,7 @@ set wildmenu
 nnoremap \html :-1read $HOME/.vim/.skeleton.html<CR>>
 nnoremap \tex :-1read $HOME/.vim/.skeleton.tex<CR>>
 nnoremap \python :-1read $HOME/.vim/.skeleton.python<CR>>
+nnoremap \cpp :-1read $HOME/.vim/.skeleton.cpp<CR>>
 
 " fix backspace
 set backspace=indent,eol,start
