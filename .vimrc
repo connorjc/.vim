@@ -2,8 +2,18 @@
 
 " Set Colors
 syntax on
-set background=dark
-colorscheme hybrid_material
+let g:nd_themes = [
+  \ ['sunrise+0',   'seoul256',        'dark' ],
+  \ ['sunrise+1/2', 'seoul256',        'light'],
+  \ ['sunset+0',    'seoul256',        'dark' ],
+  \ ['sunset+1/2',  'hybrid_material', 'dark' ],
+  \ ]
+let g:nd_latitude = '30'
+if strftime("%m") > 2 && strftime("%m") < 10
+  let g:nd_timeshift = '95'
+else
+  let g:nd_timeshift = '35'
+endif
 
 " Highlight 80 character
 highlight OverLength ctermbg=gray ctermfg=black guibg=#592929

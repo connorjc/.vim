@@ -16,3 +16,6 @@
 [submodule "vim-colorschemes"]
 	path = vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "pack/plugins/start/night-and-day"]
+	path = pack/plugins/start/night-and-day
+	url = https://github.com/nightsense/night-and-day.git
