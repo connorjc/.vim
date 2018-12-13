@@ -3,10 +3,10 @@
 " Set Colors
 syntax on
 let g:nd_themes = [
-  \ ['sunrise+0',   'seoul256',        'dark' ],
-  \ ['sunrise+1/2', 'seoul256',        'light'],
+  \ ['sunset+25/28',    'seoul256',        'dark' ],
+  \ ['sunrise+0',   'seoul256',        'light' ],
   \ ['sunset+0',    'seoul256',        'dark' ],
-  \ ['sunset+1/2',  'hybrid_material', 'dark' ],
+  \ ['sunset+3/28',  'hybrid_material', 'dark' ],
   \ ]
 let g:nd_latitude = '30'
 if strftime("%m") > 2 && strftime("%m") < 10
