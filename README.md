@@ -1,5 +1,7 @@
 # .vim
 
+When cloning or pulling make sure to include the `--recurse-submodules` flag
+
 ## Copy over .vimrc
 ```sh
 ln -s ~/.vim/.vimrc ~/.vimrc
