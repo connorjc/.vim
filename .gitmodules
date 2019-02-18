@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/night-and-day"]
 	path = pack/plugins/start/night-and-day
 	url = https://github.com/nightsense/night-and-day.git
+[submodule "pack/plugins/start/vim-quicktask"]
+	path = pack/plugins/start/vim-quicktask
+	url = https://github.com/aaronbieber/vim-quicktask.git
