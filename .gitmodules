@@ -22,3 +22,6 @@
 [submodule "pack/plugins/start/vim-quicktask"]
 	path = pack/plugins/start/vim-quicktask
 	url = https://github.com/aaronbieber/vim-quicktask.git
+[submodule "pack/plugins/start/browser.vim"]
+	path = pack/plugins/start/browser.vim
+	url = https://github.com/mjbrownie/browser.vim
