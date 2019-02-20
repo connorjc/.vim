@@ -39,6 +39,10 @@ set number		" Enable line numbers
 set mouse=a		" Mouse enable
 set wildmenu
 
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 " Snippets
 nnoremap \html :-1read $HOME/.vim/.skeleton.html<CR>>
 nnoremap \tex :-1read $HOME/.vim/.skeleton.tex<CR>>
