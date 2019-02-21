@@ -4,9 +4,6 @@
 [submodule "pack/plugins/start/indentline"]
 	path = pack/plugins/start/indentline
 	url = https://github.com/yggdroot/indentline
-[submodule "pack/plugins/start/nerdtree"]
-	path = pack/plugins/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree
 [submodule "pack/plugins/start/vim-airline"]
 	path = pack/plugins/start/vim-airline
 	url = https://github.com/bling/vim-airline
