@@ -2,11 +2,13 @@
 
 " Set Colors
 syntax on
+
+" Night-and-Day
 let g:nd_themes = [
-  \ ['sunset+25/28',    'seoul256',        'dark' ],
-  \ ['sunrise+0',   'seoul256',        'light' ],
-  \ ['sunset+0',    'seoul256',        'dark' ],
-  \ ['sunset+3/28',  'hybrid_material', 'dark' ],
+  \ ['sunset+25/28',	'seoul256',        'dark' ],
+  \ ['sunrise+0',	'seoul256',        'light'],
+  \ ['sunset+0',	'seoul256',        'dark' ],
+  \ ['sunset+3/28',	'hybrid_material', 'dark' ],
   \ ]
 let g:nd_latitude = '30'
 if strftime("%m") > 2 && strftime("%m") < 10
@@ -28,7 +30,17 @@ set hlsearch		" Highlight search results
 let g:indentLine_char = "|"
 let g:indentLine_conceallevel = 1
 
-" Vim-Airline
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 set laststatus=2
 set noshowmode
 

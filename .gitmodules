@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/browser.vim"]
 	path = pack/plugins/start/browser.vim
 	url = https://github.com/mjbrownie/browser.vim
+[submodule "pack/plugins/start/lightline.vim"]
+	path = pack/plugins/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
