@@ -22,3 +22,9 @@
 [submodule "pack/plugins/start/lightline.vim"]
 	path = pack/plugins/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "pack/plugins/start/vim-autotag"]
+	path = pack/plugins/start/vim-autotag
+	url = https://github.com/craigemery/vim-autotag.git
+[submodule "pack/plugins/start/tagbar"]
+	path = pack/plugins/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
