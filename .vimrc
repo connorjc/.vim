@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'aaronbieber/vim-quicktask'
 Plug 'iamcco/markdown-preview.vim', {'for': 'md'}
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 " Night-and-Day
