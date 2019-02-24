@@ -14,10 +14,10 @@ endif
 call plug#begin('~/.vim/pack/plugins/start')
 Plug 'w0rp/ale'							"async linting
 Plug 'mjbrownie/browser.vim'					"lynx support
-Plug 'chrisbra/csv.vim', {'for': 'csv'}				"enhanced csv support
+Plug 'chrisbra/csv.vim',					"enhanced csv support
 Plug 'yggdroot/indentline'					"shows indents
 Plug 'itchyny/lightline.vim'					"minimal status bar
-Plug 'iamcco/markdown-preview.vim', {'for': 'md'}		"live markdown preview
+Plug 'iamcco/markdown-preview.vim',				"live markdown preview
 Plug 'nightsense/night-and-day'					"dynamic colorschemes
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag'	"ctag support
 Plug 'flazz/vim-colorschemes'					"colorschemes
