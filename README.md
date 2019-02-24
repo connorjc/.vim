@@ -1,10 +1,30 @@
 # .vim
 
-When cloning or pulling make sure to include the `--recurse-submodules` flag
-
-## Copy over .vimrc
+## Setup
 ```sh
+git clone https://github.com/connorjc/.vim.git ~/.
 ln -s ~/.vim/.vimrc ~/.vimrc
+```
+
+### Modifying Plugins
+
+#### Add Plugins
+Add a line in the `declare plugins` section in `.vimrc`.
+
+Then restart vim or `:source ~/.vimrc` and do the following:
+
+```
+:PlugInstall
+```
+
+#### Remove Plugins
+Comment/remove a line in the `declare plugins` section as well as any 
+plugin configurations elsewhere in `.vimrc` labeled by a comment.
+
+Then restart vim or `:source ~/.vimrc` and do the following:
+
+```
+:PlugClean
 ```
 
 ## If vim8 is not installed:
@@ -13,10 +33,12 @@ sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
 sudo rm /usr/bin/vim
 sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev sudo apt install python3-dev ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
 ```
+
 ## Optional: so vim can be uninstalled again via `dpkg -r vim`
 ```sh
 sudo apt-get install checkinstall
 ```
+
 ## Required to install
 ```sh
 sudo rm -rf /usr/local/share/vim 
