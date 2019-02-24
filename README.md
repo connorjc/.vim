@@ -2,7 +2,7 @@
 
 ## Setup
 ```sh
-git clone https://github.com/connorjc/.vim.git ~/.vim
+git clone git@github.com:connorjc/.vim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
