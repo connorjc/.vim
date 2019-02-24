@@ -21,9 +21,9 @@ Plug 'iamcco/markdown-preview.vim', {'for': 'md'}		"live markdown preview
 Plug 'nightsense/night-and-day'					"dynamic colorschemes
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag'	"ctag support
 Plug 'flazz/vim-colorschemes'					"colorschemes
+Plug 'tpope/vim-commentary'					"enhanced commenting
 Plug 'tpope/vim-fugitive'					"git support
 Plug 'aaronbieber/vim-quicktask'				"todo list support
-Plug 'tpope/vim-commentary.git'					"enhanced commenting
 call plug#end()
 
 " IndentLine
