@@ -1,5 +1,7 @@
 " Super Vim!
 
+colorscheme happy_hacking " Default colorscheme
+
 " Plugins Config
 " auto install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -12,15 +14,16 @@ endif
 call plug#begin('~/.vim/pack/plugins/start')
 Plug 'w0rp/ale'							"async linting
 Plug 'mjbrownie/browser.vim'					"lynx support
+Plug 'chrisbra/csv.vim', {'for': 'csv'}				"enhanced csv support
 Plug 'yggdroot/indentline'					"shows indents
 Plug 'itchyny/lightline.vim'					"minimal status bar
+Plug 'iamcco/markdown-preview.vim', {'for': 'md'}		"live markdown preview
 Plug 'nightsense/night-and-day'					"dynamic colorschemes
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag'	"ctag support
+Plug 'flazz/vim-colorschemes'					"colorschemes
 Plug 'tpope/vim-fugitive'					"git support
 Plug 'aaronbieber/vim-quicktask'				"todo list support
-Plug 'iamcco/markdown-preview.vim', {'for': 'md'}		"live markdown preview
-Plug 'chrisbra/csv.vim', {'for': 'csv'}				"enhanced csv support
-Plug 'flazz/vim-colorschemes'					"colorschemes
+Plug 'tpope/vim-commentary.git'					"enhanced commenting
 call plug#end()
 
 " IndentLine
@@ -41,7 +44,7 @@ let g:lightline = {
 set laststatus=2
 set noshowmode
 
-" Night-and-Day
+"Night-and-Day
 let g:nd_themes = [
   \ ['sunset+25/28',	'seoul256',        'dark',	'seoul256'	],
   \ ['sunrise+0',	'seoul256',        'light',	'seoul256'	],
@@ -64,9 +67,9 @@ let g:mkdp_path_to_chrome = "firefox"
 " Highlight 80 character
 highlight OverLength ctermbg=gray ctermfg=black guibg=#592929
 match OverLength /\%81v.\+/
-set textwidth=80	" Auto indent text past 80 characters
+set textwidth=80		" Auto indent text past 80 characters
 set fo-=t
-set nowrap		" Actually indent; no wrap around
+set nowrap			" Actually indent; no wrap around
 
 syntax on 		" Set Colors
 filetype plugin on	" Check filetype configs
