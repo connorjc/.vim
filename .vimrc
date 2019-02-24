@@ -10,41 +10,18 @@ endif
 
 " declare plugins
 call plug#begin('~/.vim/pack/plugins/start')
-Plug 'w0rp/ale'
-Plug 'mjbrownie/browser.vim'
-Plug 'yggdroot/indentline'
-Plug 'itchyny/lightline.vim'
-Plug 'nightsense/night-and-day'
-Plug 'majutsushi/tagbar'
-Plug 'stephenmckinney/vim-autotag'
-Plug 'tpope/vim-fugitive'
-Plug 'aaronbieber/vim-quicktask'
-Plug 'iamcco/markdown-preview.vim', {'for': 'md'}
-Plug 'chrisbra/csv.vim', {'for': 'csv'}
-Plug 'flazz/vim-colorschemes'
+Plug 'w0rp/ale'							"async linting
+Plug 'mjbrownie/browser.vim'					"lynx support
+Plug 'yggdroot/indentline'					"shows indents
+Plug 'itchyny/lightline.vim'					"minimal status bar
+Plug 'nightsense/night-and-day'					"dynamic colorschemes
+Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag'	"ctag support
+Plug 'tpope/vim-fugitive'					"git support
+Plug 'aaronbieber/vim-quicktask'				"todo list support
+Plug 'iamcco/markdown-preview.vim', {'for': 'md'}		"live markdown preview
+Plug 'chrisbra/csv.vim', {'for': 'csv'}				"enhanced csv support
+Plug 'flazz/vim-colorschemes'					"colorschemes
 call plug#end()
-
-" Night-and-Day
-let g:nd_themes = [
-  \ ['sunset+25/28',	'seoul256',        'dark',	'seoul256'	],
-  \ ['sunrise+0',	'seoul256',        'light',	'seoul256'	],
-  \ ['sunset+0',	'seoul256',        'dark',	'seoul256'	],
-  \ ['sunset+3/28',	'hybrid_material', 'dark',	'jellybeans'	],
-  \ ]
-let g:nd_latitude = '30'
-if strftime("%m") > 2 && strftime("%m") < 10
-  let g:nd_timeshift = '95'
-else
-  let g:nd_timeshift = '35'
-endif
-let g:nd_lightline = 1
-
-" Highlight 80 character
-highlight OverLength ctermbg=gray ctermfg=black guibg=#592929
-match OverLength /\%81v.\+/
-set textwidth=80
-set fo-=t
-set nowrap
 
 " IndentLine
 let g:indentLine_char = "|"
@@ -63,10 +40,33 @@ let g:lightline = {
       \ }
 set laststatus=2
 set noshowmode
-" End Plugins
+
+" Night-and-Day
+let g:nd_themes = [
+  \ ['sunset+25/28',	'seoul256',        'dark',	'seoul256'	],
+  \ ['sunrise+0',	'seoul256',        'light',	'seoul256'	],
+  \ ['sunset+0',	'seoul256',        'dark',	'seoul256'	],
+  \ ['sunset+3/28',	'hybrid_material', 'dark',	'jellybeans'	],
+  \ ]
+let g:nd_latitude = '30'
+if strftime("%m") > 2 && strftime("%m") < 10
+  let g:nd_timeshift = '95'
+else
+  let g:nd_timeshift = '35'
+endif
+let g:nd_lightline = 1
 
 " Markdown-Preview
 let g:mkdp_path_to_chrome = "firefox"
+" End Plugins
+
+" Standard Vim Config
+" Highlight 80 character
+highlight OverLength ctermbg=gray ctermfg=black guibg=#592929
+match OverLength /\%81v.\+/
+set textwidth=80	" Auto indent text past 80 characters
+set fo-=t
+set nowrap		" Actually indent; no wrap around
 
 syntax on 		" Set Colors
 filetype plugin on	" Check filetype configs
@@ -74,9 +74,9 @@ set hlsearch		" Highlight search results
 set ruler		" Always show rows/columns
 set number		" Enable line numbers
 set mouse=a		" Mouse enable
-set wildmenu
+set wildmenu		" Enables search through files without a directory tree
 
-" netrw
+" netrw config
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
@@ -87,9 +87,10 @@ nnoremap \cpp :-1read $HOME/.vim/.skeleton.cpp<CR>>
 nnoremap \python :-1read $HOME/.vim/.skeleton.python<CR>>
 nnoremap \pl :-1read $HOME/.vim/.skeleton.pl<CR>>
 
-" fix backspace
+" Fix backspace
 set backspace=indent,eol,start
 
+" Enable 256color
 if &term =~ '256color'
 	set t_ut=
 endif
