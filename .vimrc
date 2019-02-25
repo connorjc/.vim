@@ -1,5 +1,8 @@
 " Super Vim!
 
+" Dependencies
+" cpp, pylint, gcc, lynx, shellcheck
+
 colorscheme happy_hacking " Default colorscheme
 
 " Plugins Config
@@ -14,12 +17,14 @@ endif
 call plug#begin('~/.vim/pack/plugins/start')
 Plug 'w0rp/ale'							"async linting
 Plug 'mjbrownie/browser.vim'					"lynx support
-Plug 'chrisbra/csv.vim',					"enhanced csv support
+Plug 'chrisbra/csv.vim'						"enhanced csv support
+Plug 'junegunn/goyo.vim'					"distraction free r/w
 Plug 'yggdroot/indentline'					"shows indents
 Plug 'itchyny/lightline.vim'					"minimal status bar
-Plug 'iamcco/markdown-preview.vim',				"live markdown preview
+Plug 'iamcco/markdown-preview.vim'				"live markdown preview
 Plug 'nightsense/night-and-day'					"dynamic colorschemes
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag'	"ctag support
+Plug 'ntpeters/vim-better-whitespace'				"easy whitespace strip
 Plug 'flazz/vim-colorschemes'					"colorschemes
 Plug 'tpope/vim-commentary'					"enhanced commenting
 Plug 'tpope/vim-fugitive'					"git support
@@ -49,7 +54,7 @@ let g:nd_themes = [
   \ ['sunset+25/28',	'seoul256',        'dark',	'seoul256'	],
   \ ['sunrise+0',	'seoul256',        'light',	'seoul256'	],
   \ ['sunset+0',	'seoul256',        'dark',	'seoul256'	],
-  \ ['sunset+3/28',	'hybrid_material', 'dark',	'jellybeans'	],
+  \ ['sunset+3/28',	'hybrid_material', 'dark',	'deus'	],
   \ ]
 let g:nd_latitude = '30'
 if strftime("%m") > 2 && strftime("%m") < 10
@@ -61,6 +66,9 @@ let g:nd_lightline = 1
 
 " Markdown-Preview
 let g:mkdp_path_to_chrome = "firefox"
+
+" Vim-Better_Whitespace
+let g:better_whitespace_ctermcolor='yellow'
 " End Plugins
 
 " Standard Vim Config
