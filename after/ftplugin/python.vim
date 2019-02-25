@@ -12,4 +12,4 @@ set expandtab       " Expand TABs to spaces
 
 set cindent
 
-let b:ale_linters = ['pylint3']
+let b:ale_linters = ['pylint']
