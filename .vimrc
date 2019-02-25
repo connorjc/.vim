@@ -1,6 +1,6 @@
 " Connor Christian Vim8
 
-" Dependencies
+" w0rp/ale dependencies
 " cpp, pylint, gcc, lynx, shellcheck
 
 " Standard Vim
@@ -15,10 +15,10 @@ endif
 
 " 80 Character Line Limit {{{
 highlight OverLength ctermbg=gray ctermfg=black guibg=#592929
-match OverLength /\%81v.\+/
-set textwidth=80   " Auto indent text past 80 characters
-set fo-=t
-set nowrap         " Actually indent; no wrap around
+match OverLength /\%81v.\+/ " Highlight text over line limit
+set textwidth=80            " Auto indent text past 80 characters
+set fo-=t                   " Disable automatic textwidth formatting
+set nowrap                  " Actually indent; no wrap around
 " }}}
 
 " Searching {{{
@@ -29,13 +29,13 @@ set wildmenu  " visual autocomplete for command menu
 
 " Line Tracking/Navigation {{{
 set ruler                      " Always show rows/columns
-set number                     " Enable line numbers
+set nu rnu                     " Enable hybrid line numbers
 set cursorline                 " Highlight current line
 set mouse=a                    " Mouse enable
 set backspace=indent,eol,start " Fix backspace
 " }}}
 
-" Netrw {{{
+" Netrw - Directory Browsing {{{
 let g:netrw_banner = 0    " Disable unneeded 'help' banner
 let g:netrw_liststyle = 3 " unfold subdirectires
 " }}}
@@ -44,9 +44,6 @@ let g:netrw_liststyle = 3 " unfold subdirectires
 " Shortcuts to edit and source vimrc
 nnoremap \ev :sp $MYVIMRC<CR>>
 nnoremap \sv :source $MYVIMRC<CR>>
-
-" save session
-nnoremap <leader>s :mksession<CR>>
 
 " Snippets
 nnoremap \html :-1read $HOME/.vim/.skeleton.html<CR>>
