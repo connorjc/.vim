@@ -73,6 +73,7 @@ Plug 'itchyny/lightline.vim'                                  "minimal status ba
 Plug 'iamcco/markdown-preview.vim'                            "live markdown preview
 Plug 'nightsense/night-and-day'                               "dynamic colorschemes
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag' "ctag support
+Plug 'mbbill/undotree'                                        "better undo history
 Plug 'ntpeters/vim-better-whitespace'                         "easy whitespace strip
 Plug 'flazz/vim-colorschemes'                                 "colorschemes
 Plug 'tpope/vim-commentary'                                   "enhanced commenting
@@ -102,6 +103,10 @@ set laststatus=2
 set noshowmode
 " }}}
 
+" Markdown-Preview {{{
+let g:mkdp_path_to_chrome = "firefox" " Command to open preferred browser
+" }}}
+
 " Night-and-Day {{{
 let g:nd_themes = [
   \ ['sunset+25/28',	'seoul256',        'dark',	'seoul256'	],
@@ -118,8 +123,8 @@ endif
 let g:nd_lightline = 1                       " Update Lightline theme
 " }}}
 
-" Markdown-Preview {{{
-let g:mkdp_path_to_chrome = "firefox" " Command to open preferred browser
+" Undotree {{{
+let g:undotree_WindowLayout=2 " Tree on left margin and diff on bottom
 " }}}
 
 " Vim-Better-Whitespace {{{
