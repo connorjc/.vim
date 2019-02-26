@@ -5,12 +5,11 @@
 
 " Standard Vim
 " Colors {{{
-colorscheme happy_hacking " Default colorscheme
-syntax on                 " Set Colors
-filetype plugin on        " Check filetype configs
-if &term =~ '256color'    " Enable 256color
-	set t_ut=
-endif
+set t_Co=256                " Enable 256color
+colorscheme hybrid_material " Default colorscheme
+set background=dark	    " Use dark theme
+syntax on                   " Set Colors
+filetype plugin on          " Check filetype configs
 " }}}
 
 " 80 Character Line Limit {{{
@@ -27,7 +26,7 @@ set hlsearch  " Highlight search results
 set wildmenu  " visual autocomplete for command menu
 " }}}
 
-" Line Tracking/Navigation {{{
+" UI {{{
 set ruler                      " Always show rows/columns
 set nu rnu                     " Enable hybrid line numbers
 set cursorline                 " Highlight current line
@@ -71,7 +70,6 @@ Plug 'junegunn/goyo.vim'                                      "distraction free 
 Plug 'yggdroot/indentline'                                    "shows indents
 Plug 'itchyny/lightline.vim'                                  "minimal status bar
 Plug 'iamcco/markdown-preview.vim'                            "live markdown preview
-Plug 'nightsense/night-and-day'                               "dynamic colorschemes
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag' "ctag support
 Plug 'mbbill/undotree'                                        "better undo history
 Plug 'ntpeters/vim-better-whitespace'                         "easy whitespace strip
@@ -90,7 +88,7 @@ let g:indentLine_conceallevel = 1
 
 " Lightline {{{
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -105,22 +103,6 @@ set noshowmode
 
 " Markdown-Preview {{{
 let g:mkdp_path_to_chrome = "firefox" " Command to open preferred browser
-" }}}
-
-" Night-and-Day {{{
-let g:nd_themes = [
-  \ ['sunset+25/28',	'seoul256',        'dark',	'seoul256'	],
-  \ ['sunrise+0',	'seoul256',        'light',	'seoul256'	],
-  \ ['sunset+0',	'seoul256',        'dark',	'seoul256'	],
-  \ ['sunset+3/28',	'hybrid_material', 'dark',	'deus'	],
-  \ ]
-let g:nd_latitude = '30'                     " Tallahassee Latitude
-if strftime("%m") > 2 && strftime("%m") < 10 " Account for DST by adjusting min offset
-  let g:nd_timeshift = '95'
-else
-  let g:nd_timeshift = '35'
-endif
-let g:nd_lightline = 1                       " Update Lightline theme
 " }}}
 
 " Undotree {{{
