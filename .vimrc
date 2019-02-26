@@ -12,17 +12,9 @@
 " Colors {{{
 set t_Co=256                   " Enable 256color
 set background=dark	       " Use dark theme
+colorscheme hybrid_material    " Default colorscheme
 syntax on                      " Set Colors
 filetype plugin indent on      " Check filetype configs
-function! ToggleBG()           " Switch between favorite dark and light themes
-  if &background == "dark"
-    set background=light
-    colorscheme seoul256-light
-  else
-    set background=dark
-    colorscheme hybrid_material
-  endif
-endfunction
 " }}}
 
 " 80 Character Line Limit {{{
@@ -53,21 +45,34 @@ let g:netrw_banner = 0         " Disable unneeded 'help' banner
 let g:netrw_liststyle = 3      " unfold subdirectires
 " }}}
 
-" Leader Shortcuts {{{
-" Edit and source vimrc
-nnoremap <leader>ev :sp $MYVIMRC<CR>>
-nnoremap <leader>sv :source $MYVIMRC<CR>>
-
-" Toggle colorscheme
-nnoremap <leader>bg :call ToggleBG()<CR>>
-
-" Paste code skeletons
-nnoremap <leader>html   :-1read $HOME/.vim/.skeleton.html<CR>>
-nnoremap <leader>tex    :-1read $HOME/.vim/.skeleton.tex<CR>>
-nnoremap <leader>cpp    :-1read $HOME/.vim/.skeleton.cpp<CR>>
-nnoremap <leader>python :-1read $HOME/.vim/.skeleton.python<CR>>
-nnoremap <leader>pl     :-1read $HOME/.vim/.skeleton.pl<CR>>
+" Functions {{{
+function! ToggleBG()           " Switch between favorite dark and light themes
+  let s:tbg = &background
+  if s:tbg == "dark"
+    set background=light
+    colorscheme seoul256-light
+  else
+    set background=dark
+    colorscheme hybrid_material
+  endif
+endfunction
 " }}}
+
+	" Leader Shortcuts {{{
+	" Edit and source vimrc
+	nnoremap <leader>ev :sp $MYVIMRC<CR>>
+	nnoremap <leader>sv :source $MYVIMRC<CR>>
+
+	" Toggle colorscheme
+	nnoremap <leader>bg :call ToggleBG()<CR>>
+
+	" Paste code skeletons
+	nnoremap <leader>html   :-1read $HOME/.vim/.skeleton.html<CR>>
+	nnoremap <leader>tex    :-1read $HOME/.vim/.skeleton.tex<CR>>
+	nnoremap <leader>cpp    :-1read $HOME/.vim/.skeleton.cpp<CR>>
+	nnoremap <leader>python :-1read $HOME/.vim/.skeleton.python<CR>>
+	nnoremap <leader>pl     :-1read $HOME/.vim/.skeleton.pl<CR>>
+	" }}}
 
 " Plugins
 " Vim-Plug {{{
