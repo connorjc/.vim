@@ -45,6 +45,7 @@ set nu rnu                     " Enable hybrid line numbers
 set cursorline                 " Highlight current line
 set mouse=a                    " Mouse enable
 set backspace=indent,eol,start " Fix backspace
+set scrolloff=3                " Minimum lines to pad cursor when scrolling
 " }}}
 
 " Netrw - Directory Browsing {{{
