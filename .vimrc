@@ -58,21 +58,21 @@ function! ToggleBG()           " Switch between favorite dark and light themes
 endfunction
 " }}}
 
-	" Leader Shortcuts {{{
-	" Edit and source vimrc
-	nnoremap <leader>ev :sp $MYVIMRC<CR>>
-	nnoremap <leader>sv :source $MYVIMRC<CR>>
+" Leader Shortcuts {{{
+" Edit and source vimrc
+nnoremap <leader>ev :sp $MYVIMRC<CR>>
+nnoremap <leader>sv :source $MYVIMRC<CR>>
 
-	" Toggle colorscheme
-	nnoremap <leader>bg :call ToggleBG()<CR>>
+" Toggle colorscheme
+nnoremap <leader>bg :call ToggleBG()<CR>>
 
-	" Paste code skeletons
-	nnoremap <leader>html   :-1read $HOME/.vim/.skeleton.html<CR>>
-	nnoremap <leader>tex    :-1read $HOME/.vim/.skeleton.tex<CR>>
-	nnoremap <leader>cpp    :-1read $HOME/.vim/.skeleton.cpp<CR>>
-	nnoremap <leader>python :-1read $HOME/.vim/.skeleton.python<CR>>
-	nnoremap <leader>pl     :-1read $HOME/.vim/.skeleton.pl<CR>>
-	" }}}
+" Paste code skeletons
+nnoremap <leader>html   :-1read $HOME/.vim/.skeleton.html<CR>>
+nnoremap <leader>tex    :-1read $HOME/.vim/.skeleton.tex<CR>>
+nnoremap <leader>cpp    :-1read $HOME/.vim/.skeleton.cpp<CR>>
+nnoremap <leader>python :-1read $HOME/.vim/.skeleton.python<CR>>
+nnoremap <leader>pl     :-1read $HOME/.vim/.skeleton.pl<CR>>
+" }}}
 
 " Plugins
 " Vim-Plug {{{
@@ -91,6 +91,7 @@ Plug 'chrisbra/csv.vim'                                       "Enhanced csv supp
 Plug 'junegunn/goyo.vim'                                      "Distraction free r/w
 Plug 'yggdroot/indentline'                                    "Shows indents
 Plug 'itchyny/lightline.vim'                                  "Minimal status bar
+Plug 'maximbaz/lightline-ale'                                 "Ale stats in status bar
 Plug 'iamcco/markdown-preview.vim'                            "Live markdown preview
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag' "Ctag support
 Plug 'mbbill/undotree'                                        "Better undo history
@@ -113,11 +114,23 @@ let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch','linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
       \ },
+      \ }
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
       \ }
 set laststatus=2
 set noshowmode
