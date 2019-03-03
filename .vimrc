@@ -41,8 +41,9 @@ set scrolloff=3                " Minimum lines to pad cursor when scrolling
 " }}}
 
 " Undo {{{
-set undofile                   " Save undos after file closes
-set undodir=~/.vim/undo        " Save undos here to uncluter filesystem
+call system('mkdir -p ' . '~/.vim/undo') " Create undo directory incase it doesn't exist
+set undofile                             " Save undos after file closes
+set undodir=~/.vim/undo                  " Save undos here to uncluter filesystem
 " }}}
 
 " Netrw - Directory Browsing {{{
