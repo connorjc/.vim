@@ -40,6 +40,11 @@ set backspace=indent,eol,start " Fix backspace
 set scrolloff=3                " Minimum lines to pad cursor when scrolling
 " }}}
 
+" Undo {{{
+set undofile                   " Save undos after file closes
+set undodir=~/.vim/undo        " Save undos here to uncluter filesystem
+" }}}
+
 " Netrw - Directory Browsing {{{
 let g:netrw_banner = 0         " Disable unneeded 'help' banner
 let g:netrw_liststyle = 3      " unfold subdirectires
