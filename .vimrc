@@ -2,10 +2,27 @@
 
 " Dependencies {{{
 " w0rp/ale:
-" gcc, cpplint, pylint, javac, shellcheck, tidy
+"   * cpp:
+"     + gcc
+"     + cpplint
+"
+"   * python3:
+"     + pylint
+"
+"   * java:
+"     + javac
+"
+"   * bash:
+"     + shellcheck
+"
+"   * html:
+"     + tidy
+"
+"   * LaTex:
+"     + lacheck
 "
 " mjbrownie/browser:
-" lnyx
+"   * lnyx
 " }}}
 
 " Standard Vim
