@@ -65,9 +65,9 @@ sudo ./configure \
 --enable-fontset \
 --enable-largefile \
 --disable-netbeans \
---with-vim-name=vim8
 --with-compiledby="Connor Christian" \
---enable-fail-if-missing
+--enable-fail-if-missing \
+--with-vim-name=vim8
 
 sudo make && sudo make install
 ```
