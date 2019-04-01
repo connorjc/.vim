@@ -2,7 +2,7 @@
 
 " Dependencies {{{
 " w0rp/ale:
-" gcc, cpplint, pylint, javac, shellcheck
+" gcc, cpplint, pylint, javac, shellcheck, tidy
 "
 " mjbrownie/browser:
 " lnyx
