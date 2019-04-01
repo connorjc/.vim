@@ -107,6 +107,7 @@ Plug 'tpope/vim-commentary'                                   "Enhanced commenti
 Plug 'tpope/vim-fugitive'                                     "Git support
 Plug 'tommcdo/vim-lion'                                       "Easy alignment
 Plug 'aaronbieber/vim-quicktask'                              "Todo list support
+Plug 'xuhdev/vim-latex-live-preview'                          "Live LaTex preview
 call plug#end()
 " }}}
 
