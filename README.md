@@ -31,7 +31,7 @@ Then restart vim or `:source ~/.vimrc` and do the following:
 ```sh
 sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
 sudo rm /usr/bin/vim
-sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev sudo apt install python3-dev ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
+sudo apt install python-dev python3-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
 ```
 
 ## Optional: so vim can be uninstalled again via `dpkg -r vim`
