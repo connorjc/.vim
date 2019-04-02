@@ -46,7 +46,7 @@ sudo rm -rf /usr/local/share/vim
 cd /usr/local/src
 sudo git clone https://github.com/vim/vim
 cd vim
-sudo git pull && sudo git fetch
+sudo git pull
 
 cd src
 sudo make distclean
