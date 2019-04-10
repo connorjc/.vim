@@ -118,11 +118,13 @@ Plug 'iamcco/markdown-preview.vim'                            "Live markdown pre
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag' "Ctag support
 Plug 'mbbill/undotree'                                        "Better undo history
 Plug 'ntpeters/vim-better-whitespace'                         "Easy whitespace strip
+Plug 'ap/vim-css-color'                                       "Preview CSS Colors
 Plug 'flazz/vim-colorschemes'                                 "Colorschemes
 Plug 'tpope/vim-commentary'                                   "Enhanced commenting
 Plug 'tpope/vim-fugitive'                                     "Git support
 Plug 'tommcdo/vim-lion'                                       "Easy alignment
 Plug 'aaronbieber/vim-quicktask'                              "Todo list support
+Plug 'tpope/vim-surround'                                     "Enhanced surroundings
 Plug 'xuhdev/vim-latex-live-preview'                          "Live LaTex preview
 call plug#end()
 " }}}
