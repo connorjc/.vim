@@ -94,7 +94,6 @@ nnoremap <leader>html   :-1read $HOME/.vim/.skeleton.html<CR>>
 nnoremap <leader>tex    :-1read $HOME/.vim/.skeleton.tex<CR>>
 nnoremap <leader>cpp    :-1read $HOME/.vim/.skeleton.cpp<CR>>
 nnoremap <leader>python :-1read $HOME/.vim/.skeleton.python<CR>>
-nnoremap <leader>pl     :-1read $HOME/.vim/.skeleton.pl<CR>>
 " }}}
 
 " Plugins
