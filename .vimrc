@@ -110,6 +110,7 @@ call plug#begin('~/.vim/pack/plugins/start')
 Plug 'w0rp/ale'                                               "Async linting
 Plug 'mjbrownie/browser.vim'                                  "Lynx support
 Plug 'chrisbra/csv.vim'                                       "Enhanced csv support
+Plug 'ctrlpvim/ctrlp.vim'                                     "Fuzzy Finder
 Plug 'junegunn/goyo.vim'                                      "Distraction free r/w
 Plug 'yggdroot/indentline'                                    "Shows indents
 Plug 'itchyny/lightline.vim'                                  "Minimal status bar
