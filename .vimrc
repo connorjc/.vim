@@ -49,6 +49,7 @@ set wildmenu                   " visual autocomplete for command menu
 " }}}
 
 " UI {{{
+set guifont=Monaco:h14         " Set font and size for MacVim
 set ruler                      " Always show rows/columns
 set nu rnu                     " Enable hybrid line numbers
 set cursorline                 " Highlight current line
