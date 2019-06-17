@@ -123,6 +123,7 @@ Plug 'ap/vim-css-color'                                       "Preview CSS Color
 Plug 'flazz/vim-colorschemes'                                 "Colorschemes
 Plug 'tpope/vim-commentary'                                   "Enhanced commenting
 Plug 'tpope/vim-fugitive'                                     "Git support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }            "Golang support
 Plug 'tommcdo/vim-lion'                                       "Easy alignment
 Plug 'aaronbieber/vim-quicktask'                              "Todo list support
 Plug 'tpope/vim-surround'                                     "Enhanced surroundings
