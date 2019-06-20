@@ -80,6 +80,17 @@ function! ToggleBG()           " Switch between favorite dark and light themes
     colorscheme hybrid_material
   endif
 endfunction
+
+let clock = strftime("%I:%M:%S %p")
+function! SetTime(timer)
+  let g:clock = strftime("%I:%M:%S %p")
+  call lightline#update()
+endfunction
+
+function! GetTime()
+  return g:clock
+endfunction
+let timer = timer_start(1000, 'SetTime',{'repeat':-1})
 " }}}
 
 " Leader Shortcuts {{{
@@ -142,10 +153,15 @@ let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch','linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch','linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'clock' ],
+      \              [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [  'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
+      \   'clock': 'GetTime',
       \ },
       \ }
 let g:lightline.component_expand = {
