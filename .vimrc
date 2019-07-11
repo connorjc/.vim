@@ -90,7 +90,7 @@ endfunction
 function! GetTime()
   return g:clock
 endfunction
-let timer = timer_start(1000, 'SetTime',{'repeat':-1})
+let timer = "default" 
 " }}}
 
 " Leader Shortcuts {{{
@@ -154,8 +154,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch','linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'clock' ],
-      \              [ 'lineinfo' ],
+      \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [  'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
@@ -178,6 +177,10 @@ let g:lightline.component_type = {
       \ }
 set laststatus=2
 set noshowmode
+
+" if exists("g:loaded_lightline")
+"   let g:timer = timer_start(1000, 'SetTime',{'repeat':-1})
+" endif
 " }}}
 
 " Markdown-Preview {{{
