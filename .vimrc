@@ -184,7 +184,11 @@ set noshowmode
 " }}}
 
 " Markdown-Preview {{{
-let g:mkdp_path_to_chrome = "firefox"       " Command to open preferred browser
+if has('mac')
+  let g:mkdp_path_to_chrome = "open -a Firefox"       " Command to open preferred browser
+else
+  let g:mkdp_path_to_chrome = "firefox"       " Command to open preferred browser
+endif
 " }}}
 
 " Undotree {{{
