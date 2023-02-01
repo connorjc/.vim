@@ -65,8 +65,9 @@ set undodir=~/.vim/undo                  " Save undos here to uncluter filesyste
 " }}}
 
 " Netrw - Directory Browsing {{{
-let g:netrw_banner = 0         " Disable unneeded 'help' banner
-let g:netrw_liststyle = 3      " unfold subdirectires
+let g:netrw_banner = 0                                   " Disable unneeded 'help' banner
+let g:netrw_liststyle = 3                                " Unfold subdirectires
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro' " Add line numbers
 " }}}
 
 " Functions {{{
@@ -135,9 +136,10 @@ nnoremap <leader>python :-1read $HOME/.vim/.skeleton.python<CR>>
 " Plugins
 " Vim-Plug {{{
 " Auto install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -151,7 +153,6 @@ Plug 'junegunn/goyo.vim'                                      "Distraction free 
 Plug 'yggdroot/indentline'                                    "Shows indents
 Plug 'itchyny/lightline.vim'                                  "Minimal status bar
 Plug 'maximbaz/lightline-ale'                                 "Ale stats in status bar
-Plug 'iamcco/markdown-preview.vim'                            "Live markdown preview
 Plug 'majutsushi/tagbar' | Plug 'stephenmckinney/vim-autotag' "Ctag support
 Plug 'mbbill/undotree'                                        "Better undo history
 Plug 'ntpeters/vim-better-whitespace'                         "Easy whitespace strip
@@ -159,11 +160,13 @@ Plug 'ap/vim-css-color'                                       "Preview CSS Color
 Plug 'flazz/vim-colorschemes'                                 "Colorschemes
 Plug 'tpope/vim-commentary'                                   "Enhanced commenting
 Plug 'tpope/vim-fugitive'                                     "Git support
+Plug 'jmcantrell/vim-virtualenv'                              "Virtual Env support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }            "Golang support
 Plug 'tommcdo/vim-lion'                                       "Easy alignment
 Plug 'aaronbieber/vim-quicktask'                              "Todo list support
 Plug 'tpope/vim-surround'                                     "Enhanced surroundings
-Plug 'xuhdev/vim-latex-live-preview'                          "Live LaTex preview
+" Plug 'xuhdev/vim-latex-live-preview'                          "Live LaTex preview
+" Plug 'iamcco/markdown-preview.vim'                            "Live markdown preview
 call plug#end()
 " }}}
 
@@ -177,13 +180,14 @@ let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch','linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'readonly', 'filename', 'modified' ] ],
+      \             [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [  'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [  'gitbranch', 'venv', 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
+      \   'gitbranch': 'FugitiveHead',
+      \   'venv': 'virtualenv#statusline',
       \   'clock': 'GetTime',
       \ },
       \ }
